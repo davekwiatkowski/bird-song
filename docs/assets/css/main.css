@@ -74,25 +74,33 @@ ul {
   -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   height: 100vh;
+  width: 100%;
   background-color: #fff;
   color: #888;
   -webkit-animation: fade-in 2.5s 0s ease-in forwards;
-          animation: fade-in 2.5s 0s ease-in forwards; }
+          animation: fade-in 2.5s 0s ease-in forwards;
+  position: fixed;
+  top: 0;
+  left: 0; }
 
 @-webkit-keyframes fade-in {
   0% {
+    z-index: 999;
     opacity: 1; }
   75% {
+    z-index: 999;
     opacity: 1; }
   100% {
     opacity: 0;
-    display: none; } }
+    z-index: -999; } }
 
 @keyframes fade-in {
   0% {
+    z-index: 999;
     opacity: 1; }
   75% {
+    z-index: 999;
     opacity: 1; }
   100% {
     opacity: 0;
-    display: none; } }
+    z-index: -999; } }
