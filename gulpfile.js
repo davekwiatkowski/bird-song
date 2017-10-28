@@ -6,14 +6,14 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     minify = require('gulp-minify-css');
 
-const srcJs = 'view/src/js/**/*.js',
-    srcPugOther = 'view/src/pug/**/*.pug',
-    srcPugIndex = 'view/src/pug/index.pug',
-    srcSass = 'view/src/sass/**/*.sass';
+const srcJs = 'docs/src/js/**/*.js',
+    srcPugOther = 'docs/src/pug/**/*.pug',
+    srcPugIndex = 'docs/src/pug/index.pug',
+    srcSass = 'docs/src/sass/**/*.sass';
 
-const destCss = 'view/assets/css/',
-    destJs = 'view/assets/js/',
-    destHtml = './view/';
+const destCss = 'docs/assets/css/',
+    destJs = 'docs/assets/js/',
+    destHtml = './docs/';
 
 gulp.task('js', function () {
     return gulp.src(srcJs)
