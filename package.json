@@ -1,0 +1,25 @@
+{
+  "name": "hackduke",
+  "version": "1.0.0",
+  "description": "2017 HackDuke hackathon project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davekwiatkowski/hackduke.git"
+  },
+  "keywords": [
+    "hackduke",
+    "hackathon",
+    "2017\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+    "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D"
+  ],
+  "author": "Dave Kwiatkowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davekwiatkowski/hackduke/issues"
+  },
+  "homepage": "https://github.com/davekwiatkowski/hackduke#readme"
+}
