@@ -1,0 +1,39 @@
+html
+    font-size: $font-size
+    font-family: $font-family
+    color: $main-text
+    line-height: 1.5
+    height: 100%
+    position: relative
+
+html *
+    transition: all 0.25s ease-in
+    user-drag: none
+    vertical-align: baseline
+    
+body
+    background-color: $main-bg
+    min-height: 100%
+    position: relative
+    overflow-x: hidden
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    
+hr
+    border: 1px solid rgba(0,0,0,0.1)
+    margin-top: 0.5em
+    margin-bottom: 0.5em
+
+a
+    color: $link
+    text-decoration: none
+    border-bottom: 1px solid transparent
+
+    &:hover, &:active, &:focus
+        border-bottom: 1px solid $link
+
+p
+    max-width: 26em
+
+ul
+    list-style: none

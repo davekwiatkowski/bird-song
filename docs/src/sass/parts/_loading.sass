@@ -1,0 +1,16 @@
+.loading-screen
+    +cent-col
+    transition: opacity 500ms ease
+    height: 100vh
+    background-color: $loading-screen-bg
+    color: $loading-screen-text
+    animation: fade-in 2.5s 0s ease-in forwards
+
+    @keyframes fade-in
+        0%
+            opacity: 1
+        75%
+            opacity: 1
+        100%
+            opacity: 0
+            display: none
