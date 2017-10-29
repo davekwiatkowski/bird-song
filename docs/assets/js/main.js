@@ -34,6 +34,10 @@ const songs = {
     'round2': {
         'names': ['Mystery Bird', 'White Goose', 'Brant Goose', "Tundra Swan", "Eurasian wigeon"],
         'locations': ['Round2_Target.ogg', 'Round2_Choice_White_Goose.ogg', 'Round2_Choice_Brant_Goose.ogg', 'Round2_Choice_Tundra_Swan.ogg', 'Round2_Choice_Eurasian_Wigeion.ogg']
+    },
+    'round3': {
+        'names': ['Mystery Bird', 'Mallard', "Northern Pintail", "Common eider"],
+        'locations': ['Round3_Target.ogg', "Round3_Choice_Mallard.ogg", "Round3_Choice_Northern_Pintail.ogg", "Round3_Choice_Common_Eider", "Round3_Choice_Laughing_Gull"]
     }
 };
 
