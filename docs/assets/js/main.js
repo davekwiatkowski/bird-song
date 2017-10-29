@@ -1,5 +1,7 @@
 let user = null;
 
+const TUNES = [];
+
 class User {
     constructor(profile) {
         this.id = profile.getId();
@@ -15,9 +17,16 @@ class Tune {
         this.audio = audio;
         this.obj = obj;
         this.id = id;
+        this.init();
+    }
+
+    init() {
+        $(this.obj).find(".name").text(this.name);
         $(this.obj).on('click', e => {
+            $(".bird-tune").not(this).removeClass("listening");
             $(this.obj).toggleClass("listening");
             e.preventDefault();
+            for (let i = 0; i < TUNES.length; ++i) if (i !== this.id) TUNES[i].audio.pause();
             this.audio.play();
             console.log("played sound " + this.id);
         });
@@ -25,7 +34,6 @@ class Tune {
 }
 
 const go = function () {
-    const TUNES = [];
     for (let i = 0; i < $(".bird-tune").length; ++i) {
         const AUDIO = new Audio("http://www.wavsource.com/snds_2017-09-17_1751672946049674/animals/bird.wav");
         const NAME = "bird" + i;
