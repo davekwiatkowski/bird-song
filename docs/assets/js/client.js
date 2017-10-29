@@ -1,6 +1,10 @@
 let socket = null;
 
 function getTruePosition(pos) {
+    if (nipple_pos === null) {
+        return {x: 0, y: 0};
+    }
+
     return {
         x: pos.x - nipple_pos.x,
         y: pos.y - nipple_pos.y
