@@ -27,15 +27,15 @@ function getPentagonX(id) {
 function getPentagonY(id) {
     switch (id) {
         case 0:
-            return 1;
+            return -1;
         case 1:
-            return PENTAGON_ANGS.c1;
+            return -PENTAGON_ANGS.c1;
         case 2:
-            return -PENTAGON_ANGS.c2;
+            return PENTAGON_ANGS.c2;
         case 3:
-            return -PENTAGON_ANGS.c2;
+            return PENTAGON_ANGS.c2;
         default:
-            return PENTAGON_ANGS.c1;
+            return -PENTAGON_ANGS.c1;
     }
 }
 
@@ -70,9 +70,9 @@ class Tune {
         $(this.obj).css({
             transform:
             `translateX(${
-            getPentagonX(this.id) * 150
+            getPentagonX(this.id) * 150 - $(this.obj).width() / 2
             }px) translateY(${
-            getPentagonY(this.id) * 150
+            getPentagonY(this.id) * 150 + $(this.obj).height() / 2
             }px)`
         });
     }

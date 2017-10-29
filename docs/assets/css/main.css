@@ -287,7 +287,9 @@ ul {
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
-    top: calc(50% - 75px); }
+    top: calc(50% - 75px);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
     /* line 25, docs/src/sass/parts/_app.sass */
     .app-screen .bird-tunes li:hover {
       background-color: #404040; }
