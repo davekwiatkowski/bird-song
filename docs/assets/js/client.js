@@ -25,12 +25,9 @@ function clientInit() {
         // For Dave:
         // Use: swarm_pos.x and swarm_pos.y
         // to draw the swarm's position in the UI
-        const true_pos = getTruePosition(swarm_pos);
-
-        console.log(true_pos);
 
         $(".swarm").css({
-            'transform': `translate(${true_pos.x}px, ${true_pos.y}px)`
+            'transform': `translate(${swarm_pos.x}px, ${swarm_pos.y}px)`
         });
     };
 }
