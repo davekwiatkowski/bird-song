@@ -12,7 +12,7 @@
 html {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
-  color: #888;
+  color: #aaa;
   line-height: 1.5;
   height: 100%;
   position: relative; }
@@ -76,7 +76,7 @@ ul {
   height: 100vh;
   width: 100%;
   background-color: #333;
-  color: #888;
+  color: #aaa;
   -webkit-animation: fade-in 2.5s 0s ease-in forwards;
           animation: fade-in 2.5s 0s ease-in forwards;
   position: fixed;
@@ -339,3 +339,47 @@ ul {
   left: calc(50% - 25px);
   -webkit-transform-origin: center center;
           transform-origin: center center; }
+
+/* line 1, docs/src/sass/parts/_info.sass */
+.info-screen {
+  background-color: #555;
+  position: fixed;
+  max-width: 20em;
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  /* line 8, docs/src/sass/parts/_info.sass */
+  .info-screen a {
+    z-index: 777; }
+  /* line 11, docs/src/sass/parts/_info.sass */
+  .info-screen ul {
+    margin-left: 1rem;
+    list-style: default; }
+  /* line 14, docs/src/sass/parts/_info.sass */
+  .info-screen.opened {
+    top: 2.5rem; }
+    /* line 15, docs/src/sass/parts/_info.sass */
+    .info-screen.opened i, .info-screen.opened ul * {
+      height: 1.5;
+      opacity: 1; }
+  /* line 19, docs/src/sass/parts/_info.sass */
+  .info-screen:not(.opened) {
+    top: 1rem; }
+    /* line 20, docs/src/sass/parts/_info.sass */
+    .info-screen:not(.opened) i, .info-screen:not(.opened) ul * {
+      height: 0;
+      opacity: 0; }

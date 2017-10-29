@@ -186,6 +186,10 @@ function startApp() {
     go();
 }
 
+function information() {
+    $(".info-screen").toggleClass("opened");
+}
+
 function handleSignIn(googleUser) {
     const profile = googleUser.getBasicProfile();
     user = new User(profile);
