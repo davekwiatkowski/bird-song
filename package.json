@@ -36,6 +36,7 @@
     "node": "8.6.0"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "hasha": "^3.0.0"
   }
 }

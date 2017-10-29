@@ -2,19 +2,18 @@
 const socket = new WebSocket('ws://localhost:1337');
 
 // Connection opened
-socket.addEventListener('open', function (event) {
-    // Pass
-});
+// socket.addEventListener('open', event => {
+// });
 
-// Listen for messages
-socket.addEventListener('message', function (event) {
-    var text = event.data;
-    var para = document.createElement("p");
-    var t = document.createTextNode(text);
-    para.appendChild(t);
-    document.body.appendChild(para);
+// Listen for messages from the server
+socket.addEventListener('message', event => {
+    const updated = event.data;
 });
 
 handle = data => {
-    socket.send(data);
+    // Send user email and choice
+    socket.send({
+        email: ,
+        choice: data
+    });
 }

@@ -1,21 +1,21 @@
 const WebSocket = require('ws');
+const hasha = require('hasha');
 
 const server = new WebSocket.Server({ port: 1337 });
 
-// Broadcast to all.
-server.broadcast = data => {
-    server.clients.forEach(client => {
-        if (client.readyState === WebSocket.OPEN) {
-            client.send('Test send!');
-        }
-    });
-};
+// Data arrays
+var dict = {};
 
 server.on('connection', socket => {
+    dict[''] = null;
+
     socket.on('message', data => {
-        // Broadcast to everyone else.
+        // Update our arrays of data
+
+        // Broadcast to everyone
         server.clients.forEach(client => {
-            if (client !== socket && client.readyState === WebSocket.OPEN) {
+            if (client.readyState === WebSocket.OPEN) {
+                // Send everyone updated data
                 client.send(data);
             }
         });
