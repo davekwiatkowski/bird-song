@@ -289,9 +289,8 @@ ul {
     top: calc(50% - 90px);
     -webkit-transform-origin: center center;
             transform-origin: center center;
-    -webkit-box-shadow: 0px 10px 8px -5px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 10px 8px -5px rgba(0, 0, 0, 0.2);
-    width: 170px;
+    border-bottom: 2px solid #878787;
+    width: 150px;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     text-align: center;

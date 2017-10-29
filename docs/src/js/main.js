@@ -87,9 +87,9 @@ class Tune {
         $(this.obj).css({
             transform:
             `translateX(${
-            getPentagonX(this.id) * 170 - $(this.obj).width() / 2
+            getPentagonX(this.id) * 130 - $(this.obj).width() / 2
             }px) translateY(${
-            getPentagonY(this.id) * 170 + $(this.obj).height() / 2
+            getPentagonY(this.id) * 130 + $(this.obj).height() / 2
             }px) rotate(${
             getPentagonDeg(this.id)
             }deg)`
@@ -116,7 +116,7 @@ const go = function () {
         zone: document.getElementById('static'),
         mode: 'static',
         position: { left: '50%', top: '50%' },
-        color: 'white',
+        color: 'rgba(0,0,0,0.4)',
         size: 150
     });
 };
