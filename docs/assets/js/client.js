@@ -2,7 +2,7 @@ let socket = null;
 
 function clientInit() {
     // Create WebSocket connection.
-    socket = new WebSocket('ws://pacific-cove-25620.herokuapp.com:5000');
+    socket = new WebSocket('ws://pacific-cove-25620.herokuapp.com');
 
     const email = user.email;
 
