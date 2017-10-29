@@ -134,13 +134,16 @@ ul {
         -ms-flex-direction: row !important;
             flex-direction: row !important; }
     /* line 13, docs/src/sass/parts/_signin.sass */
+    .signin-page.close .start-app, .signin-page.close .title {
+      display: none; }
+    /* line 15, docs/src/sass/parts/_signin.sass */
     .signin-page.close .sign-out {
-      right: 0;
-      top: 0;
+      right: 0rem;
+      top: 0rem;
       -webkit-box-shadow: none;
               box-shadow: none;
       position: fixed; }
-    /* line 18, docs/src/sass/parts/_signin.sass */
+    /* line 20, docs/src/sass/parts/_signin.sass */
     .signin-page.close .profile {
       left: 0.5rem;
       -webkit-box-orient: horizontal !important;
@@ -151,19 +154,19 @@ ul {
       top: 0.5rem;
       height: 1.5rem !important;
       width: auto !important; }
-      /* line 25, docs/src/sass/parts/_signin.sass */
+      /* line 27, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .face {
         background-size: 2rem 2rem !important;
         height: 2rem !important;
         width: 2rem !important;
         margin-bottom: 0 !important; }
-      /* line 31, docs/src/sass/parts/_signin.sass */
+      /* line 33, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .name {
         margin-left: 0.5rem; }
-  /* line 34, docs/src/sass/parts/_signin.sass */
+  /* line 36, docs/src/sass/parts/_signin.sass */
   .signin-page .title {
     margin-bottom: 0.5rem; }
-  /* line 37, docs/src/sass/parts/_signin.sass */
+  /* line 39, docs/src/sass/parts/_signin.sass */
   .signin-page .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -178,28 +181,28 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    /* line 38, docs/src/sass/parts/_signin.sass */
+    /* line 40, docs/src/sass/parts/_signin.sass */
     .signin-page .buttons .button {
       margin: 0.25rem; }
-      /* line 40, docs/src/sass/parts/_signin.sass */
+      /* line 42, docs/src/sass/parts/_signin.sass */
       .signin-page .buttons .button.sign-out {
         color: red; }
-        /* line 42, docs/src/sass/parts/_signin.sass */
+        /* line 44, docs/src/sass/parts/_signin.sass */
         .signin-page .buttons .button.sign-out:hover, .signin-page .buttons .button.sign-out:focus, .signin-page .buttons .button.sign-out:active {
           border-color: red; }
-  /* line 47, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .profile {
-    height: 0; }
   /* line 49, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .button, .signin-page:not(.signed-out) .profile, .signin-page:not(.signed-out) .name {
+  .signin-page:not(.signed-in) .profile {
+    height: 0; }
+  /* line 51, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-in) .button, .signin-page:not(.signed-in) .profile, .signin-page:not(.signed-in) .name {
     opacity: 0;
     visibility: hidden; }
-  /* line 52, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .g-signin2 {
+  /* line 54, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-in) .g-signin2 {
     height: auto;
     opacity: 1;
     visibility: visible; }
-  /* line 58, docs/src/sass/parts/_signin.sass */
+  /* line 60, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -216,17 +219,17 @@ ul {
             flex-direction: column;
     width: 200px;
     height: 200px; }
-    /* line 63, docs/src/sass/parts/_signin.sass */
+    /* line 65, docs/src/sass/parts/_signin.sass */
     .signin-page.signed-in .profile .face {
       height: 100px;
       width: 100px;
       border-radius: 100%;
       margin-bottom: 1rem; }
-  /* line 69, docs/src/sass/parts/_signin.sass */
+  /* line 71, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .button, .signin-page.signed-in .profile, .signin-page.signed-in .name {
     opacity: 1;
     visibility: visible; }
-  /* line 72, docs/src/sass/parts/_signin.sass */
+  /* line 74, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .g-signin2 {
     height: 0;
     opacity: 0;

@@ -10,9 +10,11 @@
     &.close
         bottom: calc(100vh - 2.5rem)
         flex-direction: row!important
+        .start-app, .title
+            display: none
         .sign-out
-            right: 0
-            top: 0
+            right: 0rem
+            top: 0rem
             box-shadow: none
             position: fixed
         .profile
@@ -43,7 +45,7 @@
                     border-color: red
         +cent-row
 
-    &:not(.signed-out)
+    &:not(.signed-in)
         .profile
             height: 0
         .button, .profile, .name
