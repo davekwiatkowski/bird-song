@@ -9,6 +9,10 @@ class User {
     }
 }
 
+function startApp() {
+    $(".signin-page").addClass("close");
+}
+
 function onSignIn(googleUser) {
     const profile = googleUser.getBasicProfile();
     user = new User(profile);
@@ -30,6 +34,7 @@ function signOut() {
         console.log('User signed out.');
         $(".signin-page").removeClass("signed-in");
     });
+    $(".signin-page").removeClass("close");
 }
 
 window.onLoadCallback = function () {

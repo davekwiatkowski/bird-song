@@ -1,14 +1,52 @@
 .signin-page
     height: 100vh
+    position: absolute
+    width: 100%
+    bottom: 0
+
     +cent-col
+    +shadow
+
+    &.close
+        bottom: calc(100vh - 2.5rem)
+        flex-direction: row!important
+        .sign-out
+            right: 0
+            top: 0
+            box-shadow: none
+            position: fixed
+        .profile
+            left: 0.5rem
+            flex-direction: row!important
+            position: fixed
+            top: 0.5rem
+            height: 1.5rem!important
+            width: auto!important
+            .face
+                background-size: 2rem 2rem!important
+                height: 2rem!important
+                width: 2rem!important
+                margin-bottom: 0!important
+                
+            .name
+                margin-left: 0.5rem
 
     .title
         margin-bottom: 0.5rem
 
+    .buttons
+        .button
+            margin: 0.25rem
+            &.sign-out
+                color: red
+                &:hover, &:focus, &:active
+                    border-color: red
+        +cent-row
+
     &:not(.signed-out)
         .profile
             height: 0
-        .sign-out, .profile, .name
+        .button, .profile, .name
             opacity: 0
             visibility: hidden
         .g-signin2
@@ -28,7 +66,7 @@
                 border-radius: 100%
                 margin-bottom: 1rem
 
-        .sign-out, .profile, .name
+        .button, .profile, .name
             opacity: 1
             visibility: visible
         .g-signin2
