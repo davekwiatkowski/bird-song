@@ -16,6 +16,8 @@ function broadcast() {
             if (client.readyState === WebSocket.OPEN) {
                 // Send everyone updated data
                 client.send(
+                    console.log(swarm_pos);
+
                     JSON.stringify(swarm_pos)
                 );
             }

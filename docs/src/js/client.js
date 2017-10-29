@@ -16,6 +16,9 @@ function clientInit() {
         // to draw the swarm's position in the UI
         const x = swarm_pos.x - nipple_pos.x;
         const y = swarm_pos.y - nipple_pos.y;
+
+        console.log(x, y);
+
         $(".swarm").css({
             'transform': `translate(${x}px, ${y}px)`
         });
