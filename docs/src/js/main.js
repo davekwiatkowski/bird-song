@@ -1,5 +1,13 @@
 let user = null;
 
+const song_prefix = '/assets/audio/';
+const songs = {
+    'round1': {
+        'names': ['Mystery Bird', 'Bewicks Swan', 'Brent Goose', 'Canada Goose', 'Wood Duck'],
+        'locations': ['Round1_Target.m4a', 'Round1_Choice_Bewicks_Swan.ogg', 'Round1_Choice_Brent_Goose.ogg', 'Round1_Choice_Canada_Goose.ogg', 'Round1_Choice_Wood_Duck.ogg'],
+    },
+};
+
 const TUNES = [];
 
 const PENTAGON_ANGS = {
@@ -79,11 +87,18 @@ class Tune {
 }
 
 const go = function () {
+    const round = songs['round1'];
+
     for (let i = 0; i < $(".bird-tune").length; ++i) {
-        const AUDIO = new Audio("http://www.wavsource.com/snds_2017-09-17_1751672946049674/animals/bird.wav");
-        const NAME = "bird" + i;
-        const OBJ = $(".bird-tune")[i];
-        TUNES.push(new Tune(NAME, AUDIO, OBJ, i));
+        const url = song_prefix + round['locations'][i];
+        const audio = new Audio(url);
+        audio.loop = true;
+
+        const name = round['names'][i];
+        const obj = $(".bird-tune")[i];
+        $(this.obj).find('.names').text(name);
+
+        TUNES.push(new Tune(name, audio, obj, i));
     }
 
     const static = nipplejs.create({
