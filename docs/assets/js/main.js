@@ -130,7 +130,9 @@ const go = function () {
     nipple.on('move', (event, data) => {
         const degree = data.angle.degree;
         for (t of TUNES) t.handleDegree(degree);
-        clientHandleMove(degree);
+
+        const pos = data.position;
+        clientHandleMove(pos);
     });
 };
 
