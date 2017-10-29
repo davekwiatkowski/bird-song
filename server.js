@@ -43,9 +43,9 @@ server.on('connection', socket => {
                 swarm_pos.y = ((swarm_pos.y * size) - old_pos.y + new_pos.y) / size;
             }
             else {
+                size++;
                 swarm_pos.x = ((swarm_pos.x * size) + new_pos.x) / size;
                 swarm_pos.y = ((swarm_pos.y * size) + new_pos.y) / size;
-                size++;
             }
 
             dict[key] = data.position;
@@ -60,8 +60,17 @@ server.on('connection', socket => {
 
     socket.on('close', () => {
         try {
-            delete dict[key];
             size--;
+            if (size == 0) {
+                swarm_pos.x = 0;
+                swarm_pos.y = 0;
+            }
+            else {
+                const old_pos = dict[key];
+                swarm_pos.x = ((swarm_pos.x * size) - old_pos.x) / size;
+                swarm_pos.y = ((swarm_pos.y * size) - old_pos.y) / size;
+            }
+            delete dict[key];
             broadcast();
         }
         catch (error) {

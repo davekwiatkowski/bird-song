@@ -1,4 +1,28 @@
 let user = null;
+let nipple_pos = null;
+
+function throttle(fn, threshhold, scope) {
+    threshhold || (threshhold = 250);
+    var last,
+        deferTimer;
+    return function () {
+        var context = scope || this;
+
+        var now = +new Date,
+            args = arguments;
+        if (last && now < last + threshhold) {
+            // hold on to it
+            clearTimeout(deferTimer);
+            deferTimer = setTimeout(function () {
+                last = now;
+                fn.apply(context, args);
+            }, threshhold);
+        } else {
+            last = now;
+            fn.apply(context, args);
+        }
+    };
+}
 
 const song_prefix = '/assets/audio/';
 const songs = {
@@ -135,14 +159,16 @@ const go = function () {
         size: 150
     });
 
-    nipple.on('move', (event, data) => {
+    nipple.on('start', (event, data) => {
+        nipple_pos = data.position;
+    }).on('move', (event, data) => {
         const degree = data.angle.degree;
         const position = data.position;
 
         for (tune of TUNES)
             tune.handleTune(degree, position);
 
-        clientHandleMove(position);
+        throttle(clientHandleMove(position), 1000);
     }).on('end', (event, data) => {
         for (tune of TUNES)
             tune.audio.pause();
