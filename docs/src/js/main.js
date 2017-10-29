@@ -1,5 +1,6 @@
 let user = null;
 let nipple_pos = null;
+let pentagonRadius = 150;
 
 function throttle(fn, threshhold, scope) {
     threshhold || (threshhold = 250);
@@ -111,11 +112,11 @@ class Tune {
         $(this.obj).css({
             transform:
             `translateX(${
-                getPentagonX(this.id) * 130 - $(this.obj).width() / 2
+            getPentagonX(this.id) * pentagonRadius - $(this.obj).width() / 2
             }px) translateY(${
-                getPentagonY(this.id) * 130 + $(this.obj).height() / 2
+            getPentagonY(this.id) * pentagonRadius + $(this.obj).height() / 2
             }px) rotate(${
-                getPentagonDeg(this.id)
+            getPentagonDeg(this.id)
             }deg)`
         });
     }
