@@ -14,10 +14,10 @@ function broadcast() {
     try {
         server.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN) {
+                console.log(swarm_pos);
+
                 // Send everyone updated data
                 client.send(
-                    console.log(swarm_pos);
-
                     JSON.stringify(swarm_pos)
                 );
             }
