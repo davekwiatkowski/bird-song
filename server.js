@@ -60,7 +60,6 @@ server.on('connection', socket => {
 
     socket.on('close', () => {
         try {
-            delete dict[key];
             size--;
             if (size == 0) {
                 swarm_pos.x = 0;
@@ -70,6 +69,7 @@ server.on('connection', socket => {
                 swarm_pos.x = ((swarm_pos.x * size) - old_pos.x) / size;
                 swarm_pos.y = ((swarm_pos.y * size) - old_pos.y) / size;
             }
+            delete dict[key];
             broadcast();
         }
         catch (error) {
