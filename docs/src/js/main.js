@@ -11,6 +11,7 @@ class User {
 
 function startApp() {
     $(".signin-page").addClass("close");
+    $(".app-screen").addClass("started");
 }
 
 function onSignIn(googleUser) {

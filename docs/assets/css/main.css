@@ -26,7 +26,7 @@ html * {
 
 /* line 14, docs/src/sass/tools/_normalize.sass */
 body {
-  background-color: #fff;
+  background-color: #3a3a3a;
   min-height: 100%;
   position: relative;
   overflow-x: hidden;
@@ -111,6 +111,8 @@ ul {
   position: absolute;
   width: 100%;
   bottom: 0;
+  z-index: 5;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,24 +128,31 @@ ul {
           flex-direction: column;
   -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
-  /* line 10, docs/src/sass/parts/_signin.sass */
+  /* line 12, docs/src/sass/parts/_signin.sass */
   .signin-page.close {
+    background-color: #333;
     bottom: calc(100vh - 2.5rem);
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: row !important;
             flex-direction: row !important; }
-    /* line 13, docs/src/sass/parts/_signin.sass */
+    /* line 14, docs/src/sass/parts/_signin.sass */
+    .signin-page.close * {
+      color: #aaa !important; }
+    /* line 16, docs/src/sass/parts/_signin.sass */
+    .signin-page.close .button {
+      background-color: #333; }
+    /* line 21, docs/src/sass/parts/_signin.sass */
     .signin-page.close .start-app, .signin-page.close .title {
       display: none; }
-    /* line 15, docs/src/sass/parts/_signin.sass */
+    /* line 23, docs/src/sass/parts/_signin.sass */
     .signin-page.close .sign-out {
       right: 0rem;
       top: 0rem;
       -webkit-box-shadow: none;
               box-shadow: none;
       position: fixed; }
-    /* line 20, docs/src/sass/parts/_signin.sass */
+    /* line 28, docs/src/sass/parts/_signin.sass */
     .signin-page.close .profile {
       left: 0.5rem;
       -webkit-box-orient: horizontal !important;
@@ -154,23 +163,25 @@ ul {
       top: 0.5rem;
       height: 1.5rem !important;
       width: auto !important; }
-      /* line 27, docs/src/sass/parts/_signin.sass */
+      /* line 35, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .face {
         background-size: 2rem 2rem !important;
         height: 2rem !important;
         width: 2rem !important;
         margin-bottom: 0 !important; }
-      /* line 33, docs/src/sass/parts/_signin.sass */
+      /* line 41, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .name {
         margin-left: 0.5rem; }
-  /* line 36, docs/src/sass/parts/_signin.sass */
+  /* line 44, docs/src/sass/parts/_signin.sass */
   .signin-page .title {
     margin-bottom: 0.5rem; }
-  /* line 39, docs/src/sass/parts/_signin.sass */
+  /* line 47, docs/src/sass/parts/_signin.sass */
   .signin-page .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -181,28 +192,28 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    /* line 40, docs/src/sass/parts/_signin.sass */
+    /* line 48, docs/src/sass/parts/_signin.sass */
     .signin-page .buttons .button {
       margin: 0.25rem; }
-      /* line 42, docs/src/sass/parts/_signin.sass */
+      /* line 50, docs/src/sass/parts/_signin.sass */
       .signin-page .buttons .button.sign-out {
         color: red; }
-        /* line 44, docs/src/sass/parts/_signin.sass */
+        /* line 52, docs/src/sass/parts/_signin.sass */
         .signin-page .buttons .button.sign-out:hover, .signin-page .buttons .button.sign-out:focus, .signin-page .buttons .button.sign-out:active {
           border-color: red; }
-  /* line 49, docs/src/sass/parts/_signin.sass */
+  /* line 57, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .profile {
     height: 0; }
-  /* line 51, docs/src/sass/parts/_signin.sass */
+  /* line 59, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .button, .signin-page:not(.signed-in) .profile, .signin-page:not(.signed-in) .name {
     opacity: 0;
     visibility: hidden; }
-  /* line 54, docs/src/sass/parts/_signin.sass */
+  /* line 62, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .g-signin2 {
     height: auto;
     opacity: 1;
     visibility: visible; }
-  /* line 60, docs/src/sass/parts/_signin.sass */
+  /* line 68, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -219,17 +230,17 @@ ul {
             flex-direction: column;
     width: 200px;
     height: 200px; }
-    /* line 65, docs/src/sass/parts/_signin.sass */
+    /* line 73, docs/src/sass/parts/_signin.sass */
     .signin-page.signed-in .profile .face {
       height: 100px;
       width: 100px;
       border-radius: 100%;
       margin-bottom: 1rem; }
-  /* line 71, docs/src/sass/parts/_signin.sass */
+  /* line 79, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .button, .signin-page.signed-in .profile, .signin-page.signed-in .name {
     opacity: 1;
     visibility: visible; }
-  /* line 74, docs/src/sass/parts/_signin.sass */
+  /* line 82, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .g-signin2 {
     height: 0;
     opacity: 0;
@@ -241,3 +252,52 @@ ul {
   background-color: #fff;
   -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+
+/* line 1, docs/src/sass/parts/_app.sass */
+.app-screen {
+  color: #ccc;
+  width: 100%;
+  position: fixed;
+  top: 2.5rem;
+  left: 0;
+  z-index: 0;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  /* line 12, docs/src/sass/parts/_app.sass */
+  .app-screen:not(.started) {
+    display: none; }
+  /* line 15, docs/src/sass/parts/_app.sass */
+  .app-screen .bird-tunes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    /* line 18, docs/src/sass/parts/_app.sass */
+    .app-screen .bird-tunes li {
+      -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.25rem;
+      background-color: #333;
+      width: 250px;
+      padding: 0.5rem; }

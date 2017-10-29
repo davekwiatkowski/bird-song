@@ -3,11 +3,19 @@
     position: absolute
     width: 100%
     bottom: 0
+    z-index: 5
+    background-color: $signin-bg
 
     +cent-col
     +shadow
 
     &.close
+        background-color: $toolbar
+        *
+            color: $toolbar-text!important
+        .button
+            background-color: $toolbar
+        
         bottom: calc(100vh - 2.5rem)
         flex-direction: row!important
         .start-app, .title

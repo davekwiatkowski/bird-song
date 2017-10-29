@@ -1,0 +1,23 @@
+.app-screen
+    color: $app-text
+    width: 100%
+    position: fixed
+    top: 2.5rem
+    left: 0
+    z-index: 0
+    padding: 1rem
+
+    +cent-col
+
+    &:not(.started)
+        display: none
+
+    .bird-tunes
+        +cent-col
+        
+        li
+            +shadow
+            margin-bottom: 0.25rem
+            background-color: $toolbar
+            width: 250px
+            padding: 0.5rem
