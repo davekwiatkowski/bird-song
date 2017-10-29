@@ -1,4 +1,5 @@
 .app-screen
+    #static
     ul.bird-tunes
         li.bird-tune 
             .name bird1
@@ -12,8 +13,9 @@
         li.bird-tune 
             .name bird4
             .icon
-        li
+        li.bird-tune
             .name none
+//-
         div
             input#option1(type="radio", onclick="handle(this.value)", name="options", value="A")
             label(for="option1") A

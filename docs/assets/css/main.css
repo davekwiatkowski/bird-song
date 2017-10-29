@@ -280,58 +280,25 @@ ul {
   .app-screen:not(.started) {
     display: none; }
   /* line 15, docs/src/sass/parts/_app.sass */
-  .app-screen .bird-tunes {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    /* line 18, docs/src/sass/parts/_app.sass */
-    .app-screen .bird-tunes li {
-      -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
-              box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      cursor: pointer;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      margin-bottom: 0.25rem;
-      background-color: #333;
-      width: 250px;
-      padding: 0.5rem; }
-      /* line 28, docs/src/sass/parts/_app.sass */
-      .app-screen .bird-tunes li:hover {
-        background-color: #404040; }
-      /* line 31, docs/src/sass/parts/_app.sass */
-      .app-screen .bird-tunes li .icon {
-        width: 1.5rem; }
-      /* line 35, docs/src/sass/parts/_app.sass */
-      .app-screen .bird-tunes li.listening .icon:before {
-        -webkit-animation: cycle 1s ease infinite;
-                animation: cycle 1s ease infinite;
-        content: '🔈'; }
+  .app-screen #static {
+    position: fixed;
+    top: calc(50vh - 50px); }
+  /* line 20, docs/src/sass/parts/_app.sass */
+  .app-screen .bird-tunes li {
+    cursor: pointer;
+    position: fixed;
+    top: calc(50% - 75px); }
+    /* line 25, docs/src/sass/parts/_app.sass */
+    .app-screen .bird-tunes li:hover {
+      background-color: #404040; }
+    /* line 28, docs/src/sass/parts/_app.sass */
+    .app-screen .bird-tunes li .icon {
+      width: 1.5rem; }
+    /* line 32, docs/src/sass/parts/_app.sass */
+    .app-screen .bird-tunes li.listening .icon:before {
+      -webkit-animation: cycle 1s ease infinite;
+              animation: cycle 1s ease infinite;
+      content: '🔈'; }
 
 @-webkit-keyframes cycle {
   0%, 100% {

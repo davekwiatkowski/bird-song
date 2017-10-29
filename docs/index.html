@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="app-screen">
+      <div id="static"></div>
       <ul class="bird-tunes">
         <li class="bird-tune"> 
           <div class="name">bird1</div>
@@ -26,29 +27,9 @@
           <div class="name">bird4</div>
           <div class="icon"></div>
         </li>
-        <li>
+        <li class="bird-tune">
           <div class="name">none</div>
         </li>
-        <div>
-          <input id="option1" type="radio" onclick="handle(this.value)" name="options" value="A">
-          <label for="option1">A</label><span id="countA">0</span>
-        </div>
-        <div>
-          <input id="option2" type="radio" onclick="handle(this.value)" name="options" value="B">
-          <label for="option2">B</label><span id="countB">0</span>
-        </div>
-        <div>
-          <input id="option3" type="radio" onclick="handle(this.value)" name="options" value="C">
-          <label for="option3">C</label><span id="countC">0</span>
-        </div>
-        <div>
-          <input id="option4" type="radio" onclick="handle(this.value)" name="options" value="D">
-          <label for="option4">D</label><span id="countD">0</span>
-        </div>
-        <div>
-          <input id="option5" type="radio" onclick="handle(this.value)" name="options" value="NC">
-          <label for="option5">NC</label><span id="countNC">0</span>
-        </div>
       </ul>
     </div>
     <div class="signin-page">
@@ -64,6 +45,7 @@
       <h1><i>Getting ready ...</i></h1>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://yoannmoinet.github.io/nipplejs/javascripts/nipplejs.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/js/main.js"></script>

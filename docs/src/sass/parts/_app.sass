@@ -12,18 +12,15 @@
     &:not(.started)
         display: none
 
+    #static
+        position: fixed
+        top: calc(50vh - 50px)
+
     .bird-tunes
-        +cent-col
-        
         li
-            +shadow
-            +cent-row
             cursor: pointer
-            justify-content: space-between
-            margin-bottom: 0.25rem
-            background-color: $toolbar
-            width: 250px
-            padding: 0.5rem
+            position: fixed
+            top: calc(50% - 75px)
 
             &:hover
                 background-color: lighten($toolbar, 5%)

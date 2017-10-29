@@ -2,6 +2,43 @@ let user = null;
 
 const TUNES = [];
 
+const PENTAGON_ANGS = {
+    c1: Math.cos(2 * Math.PI / 5),
+    c2: Math.cos(Math.PI / 5),
+    s1: Math.sin(2 * Math.PI / 5),
+    s2: Math.sin(4 * Math.PI / 5)
+};
+
+function getPentagonX(id) {
+    switch (id) {
+        case 0:
+            return 0;
+        case 1:
+            return PENTAGON_ANGS.s1;
+        case 2:
+            return PENTAGON_ANGS.s2;
+        case 3:
+            return -PENTAGON_ANGS.s2;
+        default:
+            return -PENTAGON_ANGS.s1;
+    }
+}
+
+function getPentagonY(id) {
+    switch (id) {
+        case 0:
+            return 1;
+        case 1:
+            return PENTAGON_ANGS.c1;
+        case 2:
+            return -PENTAGON_ANGS.c2;
+        case 3:
+            return -PENTAGON_ANGS.c2;
+        default:
+            return PENTAGON_ANGS.c1;
+    }
+}
+
 class User {
     constructor(profile) {
         this.id = profile.getId();
@@ -30,6 +67,14 @@ class Tune {
             this.audio.play();
             console.log("played sound " + this.id);
         });
+        $(this.obj).css({
+            transform:
+            `translateX(${
+            getPentagonX(this.id) * 150
+            }px) translateY(${
+            getPentagonY(this.id) * 150
+            }px)`
+        });
     }
 }
 
@@ -40,6 +85,14 @@ const go = function () {
         const OBJ = $(".bird-tune")[i];
         TUNES.push(new Tune(NAME, AUDIO, OBJ, i));
     }
+
+    const static = nipplejs.create({
+        zone: document.getElementById('static'),
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'white',
+        size: 150
+    });
 };
 
 function startApp() {
@@ -56,7 +109,7 @@ function handleSignIn(googleUser) {
     console.log("User signed in.");
 
     $(".profile .face").css({
-        "background": `url(${user.image}) no-repeat center center`,
+        "background": `url(${user.image}) no- repeat center center`,
         "background-size": "100px 100px"
     });
 
