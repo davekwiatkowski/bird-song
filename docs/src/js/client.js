@@ -1,5 +1,12 @@
 let socket = null;
 
+function getTruePosition(pos) {
+    return {
+        x: pos.x - nipple_pos.x,
+        y: pos.y - nipple_pos.y
+    };
+}
+
 function clientInit() {
     // Create WebSocket connection.
     socket = new WebSocket('ws://pacific-cove-25620.herokuapp.com');
@@ -14,13 +21,12 @@ function clientInit() {
         // For Dave:
         // Use: swarm_pos.x and swarm_pos.y
         // to draw the swarm's position in the UI
-        const x = swarm_pos.x - nipple_pos.x;
-        const y = swarm_pos.y - nipple_pos.y;
+        const true_pos = getTruePosition(swarm_pos);
 
-        console.log(x, y);
+        console.log(true_pos);
 
         $(".swarm").css({
-            'transform': `translate(${x}px, ${y}px)`
+            'transform': `translate(${true_pos.x}px, ${true_pos.y}px)`
         });
     };
 }
@@ -30,7 +36,7 @@ function clientHandleMove(pos) {
     socket.send(
         JSON.stringify({
             email: user.email,
-            position: pos
+            position: getTruePosition(pos)
         })
     )
 }

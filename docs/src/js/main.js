@@ -173,6 +173,8 @@ const go = function () {
         for (tune of TUNES)
             tune.audio.pause();
     });
+
+    nipple.start();
 };
 
 function startApp() {
