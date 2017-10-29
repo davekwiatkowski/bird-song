@@ -4,10 +4,10 @@
 BirdCLEF challenge new approach
 
 Issues currently:
-Very different sized sound recordings, up to 45 minutes!
-Can have multiple bird sounds in one recording
-May have background noise
-Not very accurate
+- Very different sized sound recordings—up to 45 minutes!
+- Can have multiple bird sounds in one recording
+- May have background noise
+- Not very accurate
 
 Our solutions:
 While machine learning is not good with detecting what exact bird is in the call, we can better detect if there are calls and where they are with higher accuracy because it is a far easier problem. This allows us to thin down the dataset to a digestable amount that is short and informative.
