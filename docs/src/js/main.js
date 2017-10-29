@@ -9,9 +9,36 @@ class User {
     }
 }
 
+class Tune {
+    constructor(name, audio, obj, id) {
+        this.name = name;
+        this.audio = audio;
+        this.obj = obj;
+        this.id = id;
+        $(this.obj).on('click', e => {
+            $(this.obj).toggleClass("listening");
+            e.preventDefault();
+            this.audio.play();
+            console.log("played sound " + this.id);
+        });
+    }
+}
+
+const go = function () {
+    const TUNES = [];
+    for (let i = 0; i < $(".bird-tune").length; ++i) {
+        const AUDIO = new Audio("http://www.wavsource.com/snds_2017-09-17_1751672946049674/animals/bird.wav");
+        const NAME = "bird" + i;
+        const OBJ = $(".bird-tune")[i];
+        TUNES.push(new Tune(NAME, AUDIO, OBJ, i));
+    }
+};
+
 function startApp() {
     $(".signin-page").addClass("close");
     $(".app-screen").addClass("started");
+    console.log("Started app.");
+    go();
 }
 
 function onSignIn(googleUser) {

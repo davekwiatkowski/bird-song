@@ -17,7 +17,29 @@
         
         li
             +shadow
+            +cent-row
+            cursor: pointer
+            justify-content: space-between
             margin-bottom: 0.25rem
             background-color: $toolbar
             width: 250px
             padding: 0.5rem
+
+            &:hover
+                background-color: lighten($toolbar, 5%)
+
+            .icon
+                width: 1.5rem
+                
+            &.listening
+                .icon:before
+                    animation: cycle 1s ease infinite
+                    content: '🔈'
+                    
+                    @keyframes cycle
+                        0%, 100%
+                            content: '🔈'
+                        33%
+                            content: '🔉'
+                        66%
+                            content: '🔊'
