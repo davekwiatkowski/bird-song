@@ -39,6 +39,10 @@ function getPentagonY(id) {
     }
 }
 
+function getPentagonDeg(id) {
+    return id / 5 * 360;
+}
+
 class User {
     constructor(profile) {
         this.id = profile.getId();
@@ -59,6 +63,11 @@ class Tune {
 
     init() {
         $(this.obj).find(".name").text(this.name);
+        if (this.id === 3 || this.id === 2) {
+            $(this.obj).find(".name").css({
+                transform: `rotate(180deg)`
+            });
+        }
         $(this.obj).on('click', e => {
             $(".bird-tune").not(this).removeClass("listening");
             $(this.obj).toggleClass("listening");
@@ -70,10 +79,12 @@ class Tune {
         $(this.obj).css({
             transform:
             `translateX(${
-            getPentagonX(this.id) * 150 - $(this.obj).width() / 2
+            getPentagonX(this.id) * 170 - $(this.obj).width() / 2
             }px) translateY(${
-            getPentagonY(this.id) * 150 + $(this.obj).height() / 2
-            }px)`
+            getPentagonY(this.id) * 170 + $(this.obj).height() / 2
+            }px) rotate(${
+            getPentagonDeg(this.id)
+            }deg)`
         });
     }
 }
