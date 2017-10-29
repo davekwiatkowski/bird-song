@@ -1,4 +1,5 @@
 let user = null;
+let nipple_pos = null;
 
 function throttle(fn, threshhold, scope) {
     threshhold || (threshhold = 250);
@@ -158,7 +159,9 @@ const go = function () {
         size: 150
     });
 
-    nipple.on('move', (event, data) => {
+    nipple.on('start', (event, data) => {
+        nipple_pos = data.position;
+    }).on('move', (event, data) => {
         const degree = data.angle.degree;
         const position = data.position;
 
