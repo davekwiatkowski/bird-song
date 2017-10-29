@@ -13,38 +13,53 @@ const choice_counts = {
 };
 
 function broadcast() {
-    server.clients.forEach(client => {
-        if (client.readyState === WebSocket.OPEN) {
-            // Send everyone updated data
-            client.send(
-                JSON.stringify(choice_counts)
-            );
-        }
-    });
+    try {
+        server.clients.forEach(client => {
+            if (client.readyState === WebSocket.OPEN) {
+                // Send everyone updated data
+                client.send(
+                    JSON.stringify(choice_counts)
+                );
+            }
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 server.on('connection', socket => {
     let key = null;
 
     socket.on('message', raw_data => {
-        const data = JSON.parse(raw_data);
+        try {
+            const data = JSON.parse(raw_data);
 
-        // Update our arrays of data
-        key = hasha(data.email);
-        if (key in dict) {
-            choice_counts[dict[key]]--;
+            // Update our arrays of data
+            key = hasha(data.email);
+            if (key in dict) {
+                choice_counts[dict[key]]--;
+            }
+
+            dict[key] = data.choice;
+            choice_counts[data.choice]++;
+
+            // Broadcast to everyone
+            broadcast();
         }
-
-        dict[key] = data.choice;
-        choice_counts[data.choice]++;
-
-        // Broadcast to everyone
-        broadcast();
+        catch (error) {
+            console.log(error);
+        }
     });
 
     socket.on('close', () => {
-        choice_counts[dict[key]]--;
-        delete dict[key];
-        broadcast();
+        try {
+            choice_counts[dict[key]]--;
+            delete dict[key];
+            broadcast();
+        }
+        catch (error) {
+            console.log(error);
+        }
     });
 });
