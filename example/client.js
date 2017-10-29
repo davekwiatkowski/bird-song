@@ -1,5 +1,5 @@
 // Create WebSocket connection.
-const socket = new WebSocket('ws://localhost:1337');
+const socket = new WebSocket('ws://pacific-cove-25620.herokuapp.com');
 
 // Connection opened
 socket.addEventListener('open', function (event) {
