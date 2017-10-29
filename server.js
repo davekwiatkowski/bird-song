@@ -10,6 +10,13 @@ let swarm_pos = {
     y: 0,
 };
 
+function setSwarmPos(newx, newy) {
+    if (!isNaN(newx) && !isNaN(newy)) {
+        swarm_pos.x = newx;
+        swarm_pos.y = newy;
+    }
+}
+
 function broadcast() {
     try {
         server.clients.forEach(client => {
@@ -41,13 +48,17 @@ server.on('connection', socket => {
 
             if (key in dict) {
                 const old_pos = dict[key];
-                swarm_pos.x = ((swarm_pos.x * size) - old_pos.x + new_pos.x) / size;
-                swarm_pos.y = ((swarm_pos.y * size) - old_pos.y + new_pos.y) / size;
+                setSwarmPos(
+                    ((swarm_pos.x * size) - old_pos.x + new_pos.x) / size,
+                    ((swarm_pos.y * size) - old_pos.y + new_pos.y) / size
+                );
             }
             else {
                 size++;
-                swarm_pos.x = ((swarm_pos.x * size) + new_pos.x) / size;
-                swarm_pos.y = ((swarm_pos.y * size) + new_pos.y) / size;
+                setSwarmPos(
+                    ((swarm_pos.x * size) + new_pos.x) / size,
+                    ((swarm_pos.y * size) + new_pos.y) / size
+                );
             }
 
             dict[key] = data.position;
@@ -64,14 +75,15 @@ server.on('connection', socket => {
         try {
             size--;
             if (size == 0) {
-                swarm_pos.x = 0;
-                swarm_pos.y = 0;
+                setSwarmPos(0, 0);
             }
             else {
                 if (key in dict) {
                     const old_pos = dict[key];
-                    swarm_pos.x = ((swarm_pos.x * size) - old_pos.x) / size;
-                    swarm_pos.y = ((swarm_pos.y * size) - old_pos.y) / size;
+                    setSwarmPos(
+                        ((swarm_pos.x * size) - old_pos.x) / size,
+                        ((swarm_pos.y * size) - old_pos.y) / size
+                    );
                 }
             }
             if (key in dict) {
