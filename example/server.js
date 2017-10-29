@@ -13,12 +13,25 @@ const choice_counts = {
     'NC': 0,
 };
 
+function broadcast() {
+    server.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+            // Send everyone updated data
+            client.send(
+                JSON.stringify(choice_counts)
+            );
+        }
+    });
+}
+
 server.on('connection', socket => {
+    let key = null;
+
     socket.on('message', raw_data => {
         const data = JSON.parse(raw_data);
 
         // Update our arrays of data
-        const key = hasha(data.email);
+        key = hasha(data.email);
         if (key in dict) {
             choice_counts[dict[key]]--;
         }
@@ -27,13 +40,12 @@ server.on('connection', socket => {
         choice_counts[data.choice]++;
 
         // Broadcast to everyone
-        server.clients.forEach(client => {
-            if (client.readyState === WebSocket.OPEN) {
-                // Send everyone updated data
-                client.send(
-                    JSON.stringify(choice_counts)
-                );
-            }
-        });
+        broadcast();
+    });
+
+    socket.on('close', () => {
+        choice_counts[dict[key]]--;
+        delete dict[key];
+        broadcast();
     });
 });
