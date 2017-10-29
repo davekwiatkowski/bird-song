@@ -41,12 +41,12 @@ hr {
 
 /* line 27, docs/src/sass/tools/_normalize.sass */
 a {
-  color: #00f;
+  color: #5fa;
   text-decoration: none;
   border-bottom: 1px solid transparent; }
   /* line 32, docs/src/sass/tools/_normalize.sass */
   a:hover, a:active, a:focus {
-    border-bottom: 1px solid #00f; }
+    border-bottom: 1px solid #5fa; }
 
 /* line 35, docs/src/sass/tools/_normalize.sass */
 p {
@@ -75,7 +75,7 @@ ul {
   transition: opacity 500ms ease;
   height: 100vh;
   width: 100%;
-  background-color: #fff;
+  background-color: #333;
   color: #888;
   -webkit-animation: fade-in 2.5s 0s ease-in forwards;
           animation: fade-in 2.5s 0s ease-in forwards;
@@ -112,7 +112,7 @@ ul {
   width: 100%;
   bottom: 0;
   z-index: 5;
-  background-color: #fff;
+  background-color: #333;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,30 +129,37 @@ ul {
   -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
   /* line 12, docs/src/sass/parts/_signin.sass */
+  .signin-page .start-app {
+    color: #5fa; }
+  /* line 16, docs/src/sass/parts/_signin.sass */
+  .signin-page .profile .name {
+    font-size: 90%;
+    color: #5fa !important; }
+  /* line 20, docs/src/sass/parts/_signin.sass */
   .signin-page.close {
-    background-color: #333;
+    background-color: #555;
     bottom: calc(100vh - 2.5rem);
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: row !important;
             flex-direction: row !important; }
-    /* line 14, docs/src/sass/parts/_signin.sass */
+    /* line 22, docs/src/sass/parts/_signin.sass */
     .signin-page.close * {
-      color: #aaa !important; }
-    /* line 16, docs/src/sass/parts/_signin.sass */
+      color: #ccc !important; }
+    /* line 24, docs/src/sass/parts/_signin.sass */
     .signin-page.close .button {
-      background-color: #333; }
-    /* line 21, docs/src/sass/parts/_signin.sass */
+      background-color: #555; }
+    /* line 29, docs/src/sass/parts/_signin.sass */
     .signin-page.close .start-app, .signin-page.close .title {
       display: none; }
-    /* line 23, docs/src/sass/parts/_signin.sass */
+    /* line 31, docs/src/sass/parts/_signin.sass */
     .signin-page.close .sign-out {
       right: 0rem;
       top: 0rem;
       -webkit-box-shadow: none;
               box-shadow: none;
       position: fixed; }
-    /* line 28, docs/src/sass/parts/_signin.sass */
+    /* line 36, docs/src/sass/parts/_signin.sass */
     .signin-page.close .profile {
       left: 0.5rem;
       -webkit-box-orient: horizontal !important;
@@ -163,19 +170,19 @@ ul {
       top: 0.5rem;
       height: 1.5rem !important;
       width: auto !important; }
-      /* line 35, docs/src/sass/parts/_signin.sass */
+      /* line 43, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .face {
         background-size: 2rem 2rem !important;
         height: 2rem !important;
         width: 2rem !important;
         margin-bottom: 0 !important; }
-      /* line 41, docs/src/sass/parts/_signin.sass */
+      /* line 49, docs/src/sass/parts/_signin.sass */
       .signin-page.close .profile .name {
         margin-left: 0.5rem; }
-  /* line 44, docs/src/sass/parts/_signin.sass */
+  /* line 52, docs/src/sass/parts/_signin.sass */
   .signin-page .title {
     margin-bottom: 0.5rem; }
-  /* line 47, docs/src/sass/parts/_signin.sass */
+  /* line 55, docs/src/sass/parts/_signin.sass */
   .signin-page .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -192,28 +199,28 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    /* line 48, docs/src/sass/parts/_signin.sass */
+    /* line 56, docs/src/sass/parts/_signin.sass */
     .signin-page .buttons .button {
       margin: 0.25rem; }
-      /* line 50, docs/src/sass/parts/_signin.sass */
+      /* line 58, docs/src/sass/parts/_signin.sass */
       .signin-page .buttons .button.sign-out {
-        color: red; }
-        /* line 52, docs/src/sass/parts/_signin.sass */
+        color: #ccc; }
+        /* line 60, docs/src/sass/parts/_signin.sass */
         .signin-page .buttons .button.sign-out:hover, .signin-page .buttons .button.sign-out:focus, .signin-page .buttons .button.sign-out:active {
-          border-color: red; }
-  /* line 57, docs/src/sass/parts/_signin.sass */
+          border-color: #ccc; }
+  /* line 65, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .profile {
     height: 0; }
-  /* line 59, docs/src/sass/parts/_signin.sass */
+  /* line 67, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .button, .signin-page:not(.signed-in) .profile, .signin-page:not(.signed-in) .name {
     opacity: 0;
     visibility: hidden; }
-  /* line 62, docs/src/sass/parts/_signin.sass */
+  /* line 70, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-in) .g-signin2 {
     height: auto;
     opacity: 1;
     visibility: visible; }
-  /* line 68, docs/src/sass/parts/_signin.sass */
+  /* line 76, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -230,28 +237,39 @@ ul {
             flex-direction: column;
     width: 200px;
     height: 200px; }
-    /* line 73, docs/src/sass/parts/_signin.sass */
+    /* line 81, docs/src/sass/parts/_signin.sass */
     .signin-page.signed-in .profile .face {
       height: 100px;
       width: 100px;
       border-radius: 100%;
       margin-bottom: 1rem; }
-  /* line 79, docs/src/sass/parts/_signin.sass */
+  /* line 87, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .button, .signin-page.signed-in .profile, .signin-page.signed-in .name {
     opacity: 1;
     visibility: visible; }
-  /* line 82, docs/src/sass/parts/_signin.sass */
+  /* line 90, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .g-signin2 {
     height: 0;
     opacity: 0;
     visibility: hidden; }
 
 /* line 1, docs/src/sass/parts/_button.sass */
-.button {
+.button, .g-signin2 {
   padding: 0.2rem 0.75rem 0.2rem 0.75rem;
-  background-color: #fff;
+  background-color: #555;
+  color: #ccc;
   -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+
+/* line 7, docs/src/sass/parts/_button.sass */
+.g-signin2 * {
+  background-color: #555;
+  border: 0;
+  outline: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  font-size: 100% !important;
+  color: #ccc !important; }
 
 /* line 1, docs/src/sass/parts/_app.sass */
 .app-screen {
@@ -304,7 +322,7 @@ ul {
     font-size: 18px; }
     /* line 37, docs/src/sass/parts/_app.sass */
     .app-screen .bird-tunes li:hover {
-      background-color: #404040; }
+      background-color: #626262; }
 
 /* line 1, docs/src/sass/parts/_swarm.sass */
 .swarm {

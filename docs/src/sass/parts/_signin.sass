@@ -9,6 +9,14 @@
     +cent-col
     +shadow
 
+    .start-app
+        color: $start-text
+
+    .profile
+        .name
+            font-size: 90%
+            color: $profile-name-text!important
+
     &.close
         background-color: $toolbar
         *
@@ -48,9 +56,9 @@
         .button
             margin: 0.25rem
             &.sign-out
-                color: red
+                color: $sign-out
                 &:hover, &:focus, &:active
-                    border-color: red
+                    border-color: $sign-out
         +cent-row
 
     &:not(.signed-in)

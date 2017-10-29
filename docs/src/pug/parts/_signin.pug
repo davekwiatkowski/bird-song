@@ -1,9 +1,9 @@
 .signin-page
-    h2.title BirdSong
+    h1.title Bird Song
     .profile
         .face
         .name
-    .g-signin2(data-onsuccess="onSignIn")
+    a.g-signin2.button(data-onsuccess="onSignIn")
     .buttons
         a.sign-out.button(href="#" onclick="signOut(); return false;") Sign out
         a.start-app.button(href="#" onclick="startApp(); return false;") Start
