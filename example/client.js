@@ -15,6 +15,6 @@ socket.addEventListener('message', function (event) {
     document.body.appendChild(para);
 });
 
-function handle_message(data) {
+handle = data => {
     socket.send(data);
 }

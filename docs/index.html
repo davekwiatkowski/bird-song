@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BirdCall</title>
+    <title>BirdSong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
     <meta name="google-signin-client_id" content="1095164570247-c9sab3j041qg3dvr5df0im3i8ehrmlpo.apps.googleusercontent.com">
     <link href="assets/css/main.min.css" rel="stylesheet">
@@ -9,11 +9,13 @@
   </head>
   <body>
     <div class="signin-page">
+      <h2 class="title">BirdSong</h2>
       <div class="profile">
         <div class="face"></div>
         <div class="name"></div>
       </div>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div><a class="sign-out" href="#" onclick="signOut(); return false;">Sign out</a>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <div class="buttons"><a class="sign-out button" href="#" onclick="signOut(); return false;">Sign out</a><a class="start-app button" href="#" onclick="startApp(); return false;">Start</a></div>
     </div>
     <div class="loading-screen">
       <h1><i>Getting ready ...</i></h1>

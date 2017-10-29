@@ -1,0 +1,30 @@
+#form {
+    width: 30%;
+    margin: 0 auto;
+    column-count: 2;
+}
+
+#form input[type="radio"] {
+    display: none;
+}
+
+#form label {
+    display: inline-block;
+    margin: 1em 0 0 0;
+    padding: 2em;
+    border-radius: 0.3em;
+    background: #6699CC;
+    opacity: 0.8;
+    cursor: pointer;
+    color: #FEFEFE;
+    font-family: sans-serif;
+}
+
+#form label:hover {
+    opacity: 1;
+}
+
+#form input[type="radio"]:checked + label {
+    background: #66ff99;
+    color: #333;
+}

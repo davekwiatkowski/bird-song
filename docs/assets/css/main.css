@@ -108,6 +108,9 @@ ul {
 /* line 1, docs/src/sass/parts/_signin.sass */
 .signin-page {
   height: 100vh;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,20 +123,86 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
-  /* line 6, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .profile {
+          flex-direction: column;
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+  /* line 10, docs/src/sass/parts/_signin.sass */
+  .signin-page.close {
+    bottom: calc(100vh - 2.5rem);
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important; }
+    /* line 13, docs/src/sass/parts/_signin.sass */
+    .signin-page.close .start-app, .signin-page.close .title {
+      display: none; }
+    /* line 15, docs/src/sass/parts/_signin.sass */
+    .signin-page.close .sign-out {
+      right: 0rem;
+      top: 0rem;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      position: fixed; }
+    /* line 20, docs/src/sass/parts/_signin.sass */
+    .signin-page.close .profile {
+      left: 0.5rem;
+      -webkit-box-orient: horizontal !important;
+      -webkit-box-direction: normal !important;
+          -ms-flex-direction: row !important;
+              flex-direction: row !important;
+      position: fixed;
+      top: 0.5rem;
+      height: 1.5rem !important;
+      width: auto !important; }
+      /* line 27, docs/src/sass/parts/_signin.sass */
+      .signin-page.close .profile .face {
+        background-size: 2rem 2rem !important;
+        height: 2rem !important;
+        width: 2rem !important;
+        margin-bottom: 0 !important; }
+      /* line 33, docs/src/sass/parts/_signin.sass */
+      .signin-page.close .profile .name {
+        margin-left: 0.5rem; }
+  /* line 36, docs/src/sass/parts/_signin.sass */
+  .signin-page .title {
+    margin-bottom: 0.5rem; }
+  /* line 39, docs/src/sass/parts/_signin.sass */
+  .signin-page .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    /* line 40, docs/src/sass/parts/_signin.sass */
+    .signin-page .buttons .button {
+      margin: 0.25rem; }
+      /* line 42, docs/src/sass/parts/_signin.sass */
+      .signin-page .buttons .button.sign-out {
+        color: red; }
+        /* line 44, docs/src/sass/parts/_signin.sass */
+        .signin-page .buttons .button.sign-out:hover, .signin-page .buttons .button.sign-out:focus, .signin-page .buttons .button.sign-out:active {
+          border-color: red; }
+  /* line 49, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-in) .profile {
     height: 0; }
-  /* line 8, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .sign-out, .signin-page:not(.signed-out) .profile {
+  /* line 51, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-in) .button, .signin-page:not(.signed-in) .profile, .signin-page:not(.signed-in) .name {
     opacity: 0;
     visibility: hidden; }
-  /* line 11, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .g-signin2 {
+  /* line 54, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-in) .g-signin2 {
     height: auto;
     opacity: 1;
     visibility: visible; }
-  /* line 17, docs/src/sass/parts/_signin.sass */
+  /* line 60, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -148,23 +217,27 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100px;
+    width: 200px;
     height: 200px; }
-    /* line 20, docs/src/sass/parts/_signin.sass */
+    /* line 65, docs/src/sass/parts/_signin.sass */
     .signin-page.signed-in .profile .face {
       height: 100px;
       width: 100px;
       border-radius: 100%;
       margin-bottom: 1rem; }
-  /* line 26, docs/src/sass/parts/_signin.sass */
-  .signin-page.signed-in .sign-out, .signin-page.signed-in .profile {
+  /* line 71, docs/src/sass/parts/_signin.sass */
+  .signin-page.signed-in .button, .signin-page.signed-in .profile, .signin-page.signed-in .name {
     opacity: 1;
     visibility: visible; }
-  /* line 29, docs/src/sass/parts/_signin.sass */
+  /* line 74, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .g-signin2 {
     height: 0;
     opacity: 0;
     visibility: hidden; }
-  /* line 34, docs/src/sass/parts/_signin.sass */
-  .signin-page .label {
-    margin-bottom: 1rem; }
+
+/* line 1, docs/src/sass/parts/_button.sass */
+.button {
+  padding: 0.2rem 0.75rem 0.2rem 0.75rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }

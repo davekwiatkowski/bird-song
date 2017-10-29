@@ -1,6 +1,9 @@
 .signin-page
+    h2.title BirdSong
     .profile
         .face
         .name
     .g-signin2(data-onsuccess="onSignIn")
-    a.sign-out(href="#" onclick="signOut(); return false;") Sign out
+    .buttons
+        a.sign-out.button(href="#" onclick="signOut(); return false;") Sign out
+        a.start-app.button(href="#" onclick="startApp(); return false;") Start
