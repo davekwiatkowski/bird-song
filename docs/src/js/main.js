@@ -87,20 +87,28 @@ class Tune {
         $(this.obj).css({
             transform:
             `translateX(${
-            getPentagonX(this.id) * 130 - $(this.obj).width() / 2
+                getPentagonX(this.id) * 130 - $(this.obj).width() / 2
             }px) translateY(${
-            getPentagonY(this.id) * 130 + $(this.obj).height() / 2
+                getPentagonY(this.id) * 130 + $(this.obj).height() / 2
             }px) rotate(${
-            getPentagonDeg(this.id)
+                getPentagonDeg(this.id)
             }deg)`
         });
     }
 
     handleDegree(degree) {
         const pointer = (degree - 36 + this.id * 360 / 5) % 360;
+        const should_highlight = pointer < 72 && pointer >= 0;
         $(this.obj).css({
-            "border-bottom-color": `rgba(255, 255, 255, ${pointer < 72 && pointer >= 0 ? 1 : 0})`
+            "border-bottom-color": `rgba(255, 255, 255, ${should_highlight ? 1 : 0})`
         });
+
+        if (should_highlight) {
+            this.audio.play();
+        }
+        else {
+            this.audio.pause();
+        }
     }
 }
 
@@ -129,7 +137,8 @@ const go = function () {
 
     nipple.on('move', (event, data) => {
         const degree = data.angle.degree;
-        for (t of TUNES) t.handleDegree(degree);
+        for (t of TUNES)
+            t.handleDegree(degree);
 
         const pos = data.position;
         clientHandleMove(pos);
