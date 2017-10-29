@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const server = new WebSocket.Server({"/"});
+const server = new WebSocket.Server("/");
 
 // Broadcast to all.
 server.broadcast = data => {
