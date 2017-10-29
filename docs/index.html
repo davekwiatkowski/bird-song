@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CoursePlan</title>
+    <title>BirdCall</title>
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
     <meta name="google-signin-client_id" content="1095164570247-c9sab3j041qg3dvr5df0im3i8ehrmlpo.apps.googleusercontent.com">
     <link href="assets/css/main.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="signin-page">
+      <div class="profile">
+        <div class="face"></div>
+        <div class="name"></div>
+      </div>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div><a class="sign-out" href="#" onclick="signOut(); return false;">Sign out</a>
+    </div>
     <div class="loading-screen">
       <h1><i>Getting ready ...</i></h1>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
   </body>

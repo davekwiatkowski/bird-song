@@ -1,7 +1,39 @@
+let user = null;
+
+class User {
+    constructor(profile) {
+        this.id = profile.getId();
+        this.name = profile.getName();
+        this.image = profile.getImageUrl();
+        this.email = profile.getEmail();
+    }
+}
+
 function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
+    const profile = googleUser.getBasicProfile();
+    user = new User(profile);
+    $(".signin-page").addClass("signed-in");
+    console.log("User signed in.");
+
+    $(".profile .face").css({
+        "background": `url(${user.image}) no-repeat center center`,
+        "background-size": "100px 100px"
+    });
+
+    $(".profile .name").text(user.name);
+}
+
+function signOut() {
+    const auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        user = null;
+        console.log('User signed out.');
+        $(".signin-page").removeClass("signed-in");
+    });
+}
+
+window.onLoadCallback = function () {
+    gapi.auth2.init({
+        client_id: '1095164570247-c9sab3j041qg3dvr5df0im3i8ehrmlpo.apps.googleusercontent.com'
+    });
+}

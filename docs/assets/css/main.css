@@ -104,3 +104,67 @@ ul {
   100% {
     opacity: 0;
     z-index: -999; } }
+
+/* line 1, docs/src/sass/parts/_signin.sass */
+.signin-page {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  /* line 6, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-out) .profile {
+    height: 0; }
+  /* line 8, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-out) .sign-out, .signin-page:not(.signed-out) .profile {
+    opacity: 0;
+    visibility: hidden; }
+  /* line 11, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-out) .g-signin2 {
+    height: auto;
+    opacity: 1;
+    visibility: visible; }
+  /* line 17, docs/src/sass/parts/_signin.sass */
+  .signin-page.signed-in .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100px;
+    height: 200px; }
+    /* line 20, docs/src/sass/parts/_signin.sass */
+    .signin-page.signed-in .profile .face {
+      height: 100px;
+      width: 100px;
+      border-radius: 100%;
+      margin-bottom: 1rem; }
+  /* line 26, docs/src/sass/parts/_signin.sass */
+  .signin-page.signed-in .sign-out, .signin-page.signed-in .profile {
+    opacity: 1;
+    visibility: visible; }
+  /* line 29, docs/src/sass/parts/_signin.sass */
+  .signin-page.signed-in .g-signin2 {
+    height: 0;
+    opacity: 0;
+    visibility: hidden; }
+  /* line 34, docs/src/sass/parts/_signin.sass */
+  .signin-page .label {
+    margin-bottom: 1rem; }
