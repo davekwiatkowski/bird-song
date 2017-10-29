@@ -2,7 +2,8 @@
 2017 Hackathon at Duke University
 
 BirdCLEF challenge new approach
-
+http://ceur-ws.org/Vol-1609/16090560.pdf
+http://ceur-ws.org/Vol-1866/invited_paper_8.pdf
 Issues currently:
 - Very different sized sound recordings—up to 45 minutes!
 - Can have multiple bird sounds in one recording
