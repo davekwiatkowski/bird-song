@@ -1,11 +1,14 @@
 .signin-page
     height: 100vh
     +cent-col
-   
+
+    .title
+        margin-bottom: 0.5rem
+
     &:not(.signed-out)
         .profile
             height: 0
-        .sign-out, .profile
+        .sign-out, .profile, .name
             opacity: 0
             visibility: hidden
         .g-signin2
@@ -16,20 +19,19 @@
     &.signed-in
         .profile
             +cent-col
-            height: 100px
+            width: 200px
+            height: 200px
+            
             .face
                 height: 100px
                 width: 100px
                 border-radius: 100%
                 margin-bottom: 1rem
-            height: 200px
-        .sign-out, .profile
+
+        .sign-out, .profile, .name
             opacity: 1
             visibility: visible
         .g-signin2
             height: 0
             opacity: 0
             visibility: hidden
-    
-    .label  
-        margin-bottom: 1rem

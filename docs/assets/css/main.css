@@ -121,19 +121,22 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
-  /* line 6, docs/src/sass/parts/_signin.sass */
+  /* line 5, docs/src/sass/parts/_signin.sass */
+  .signin-page .title {
+    margin-bottom: 0.5rem; }
+  /* line 9, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-out) .profile {
     height: 0; }
-  /* line 8, docs/src/sass/parts/_signin.sass */
-  .signin-page:not(.signed-out) .sign-out, .signin-page:not(.signed-out) .profile {
+  /* line 11, docs/src/sass/parts/_signin.sass */
+  .signin-page:not(.signed-out) .sign-out, .signin-page:not(.signed-out) .profile, .signin-page:not(.signed-out) .name {
     opacity: 0;
     visibility: hidden; }
-  /* line 11, docs/src/sass/parts/_signin.sass */
+  /* line 14, docs/src/sass/parts/_signin.sass */
   .signin-page:not(.signed-out) .g-signin2 {
     height: auto;
     opacity: 1;
     visibility: visible; }
-  /* line 17, docs/src/sass/parts/_signin.sass */
+  /* line 20, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -148,23 +151,27 @@ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100px;
+    width: 200px;
     height: 200px; }
-    /* line 20, docs/src/sass/parts/_signin.sass */
+    /* line 25, docs/src/sass/parts/_signin.sass */
     .signin-page.signed-in .profile .face {
       height: 100px;
       width: 100px;
       border-radius: 100%;
       margin-bottom: 1rem; }
-  /* line 26, docs/src/sass/parts/_signin.sass */
-  .signin-page.signed-in .sign-out, .signin-page.signed-in .profile {
+  /* line 31, docs/src/sass/parts/_signin.sass */
+  .signin-page.signed-in .sign-out, .signin-page.signed-in .profile, .signin-page.signed-in .name {
     opacity: 1;
     visibility: visible; }
-  /* line 29, docs/src/sass/parts/_signin.sass */
+  /* line 34, docs/src/sass/parts/_signin.sass */
   .signin-page.signed-in .g-signin2 {
     height: 0;
     opacity: 0;
     visibility: hidden; }
-  /* line 34, docs/src/sass/parts/_signin.sass */
-  .signin-page .label {
-    margin-bottom: 1rem; }
+
+/* line 1, docs/src/sass/parts/_button.sass */
+.button {
+  padding: 0.2rem 0.75rem 0.2rem 0.75rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); }
