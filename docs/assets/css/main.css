@@ -262,6 +262,8 @@ ul {
   left: 0;
   z-index: 0;
   padding: 1rem;
+  bottom: 0;
+  height: calc(100% - 2.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,14 +277,14 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
-  /* line 12, docs/src/sass/parts/_app.sass */
+  /* line 13, docs/src/sass/parts/_app.sass */
   .app-screen:not(.started) {
     display: none; }
-  /* line 15, docs/src/sass/parts/_app.sass */
+  /* line 16, docs/src/sass/parts/_app.sass */
   .app-screen #static {
     position: fixed;
     top: 50%; }
-  /* line 20, docs/src/sass/parts/_app.sass */
+  /* line 21, docs/src/sass/parts/_app.sass */
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
@@ -298,6 +300,6 @@ ul {
     height: 5.5ch;
     line-height: 1;
     font-size: 18px; }
-    /* line 34, docs/src/sass/parts/_app.sass */
+    /* line 35, docs/src/sass/parts/_app.sass */
     .app-screen .bird-tunes li:hover {
       background-color: #404040; }
