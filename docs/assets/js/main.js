@@ -109,7 +109,7 @@ function handleSignIn(googleUser) {
     console.log("User signed in.");
 
     $(".profile .face").css({
-        "background": `url(${user.image}) no- repeat center center`,
+        "background": `url(${user.image}) no-repeat center center`,
         "background-size": "100px 100px"
     });
 
