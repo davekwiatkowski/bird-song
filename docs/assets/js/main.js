@@ -174,7 +174,8 @@ const go = function () {
             tune.audio.pause();
     });
 
-    nipple.start();
+    // Force start the nipple
+    $('#static').click();
 };
 
 function startApp() {
