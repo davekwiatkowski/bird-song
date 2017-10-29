@@ -4,12 +4,10 @@ const server = new WebSocket.Server({port: (process.env.PORT || 5000)});
 
 // Data
 const dict = {}; // List of users and their choices
-const choice_counts = {
-    'A': 0,
-    'B': 0,
-    'C': 0,
-    'D': 0,
-    'NC': 0,
+let size = 0;
+let swarm_pos = {
+    x: 0,
+    y: 0,
 };
 
 function broadcast() {
@@ -18,7 +16,7 @@ function broadcast() {
             if (client.readyState === WebSocket.OPEN) {
                 // Send everyone updated data
                 client.send(
-                    JSON.stringify(choice_counts)
+                    JSON.stringify(swarm_pos)
                 );
             }
         });
@@ -34,15 +32,23 @@ server.on('connection', socket => {
     socket.on('message', raw_data => {
         try {
             const data = JSON.parse(raw_data);
+            const new_pos = data.position;
 
             // Update our arrays of data
             key = hasha(data.email);
+
             if (key in dict) {
-                choice_counts[dict[key]]--;
+                const old_pos = dict[key];
+                swarm_pos.x = ((swarm_pos.x * size) - old_pos.x + new_pos.x) / size;
+                swarm_pos.y = ((swarm_pos.y * size) - old_pos.y + new_pos.y) / size;
+            }
+            else {
+                swarm_pos.x = ((swarm_pos.x * size) + new_pos.x) / size;
+                swarm_pos.y = ((swarm_pos.y * size) + new_pos.y) / size;
+                size++;
             }
 
-            dict[key] = data.choice;
-            choice_counts[data.choice]++;
+            dict[key] = data.position;
 
             // Broadcast to everyone
             broadcast();
@@ -54,8 +60,8 @@ server.on('connection', socket => {
 
     socket.on('close', () => {
         try {
-            choice_counts[dict[key]]--;
             delete dict[key];
+            size--;
             broadcast();
         }
         catch (error) {

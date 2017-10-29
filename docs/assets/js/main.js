@@ -122,7 +122,8 @@ const go = function () {
 
     nipple.on('move', (event, data) => {
         const degree = data.angle.degree;
-        clientHandleMove(degree);
+        const pos = data.position;
+        clientHandleMove(pos);
     });
 };
 

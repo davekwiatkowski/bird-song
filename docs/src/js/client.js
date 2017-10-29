@@ -8,20 +8,19 @@ function clientInit() {
 
     // Listen for messages from the server
     socket.onmessage = event => {
-        const counts = JSON.parse(event.data);
-        Object.keys(counts).forEach(key => {
-            const val = counts[key];
-            $('#count' + key).text(val);
-        });
+        const swarm_pos = JSON.parse(event.data);
+        // For Dave:
+        // Use: swarm_pos.x and swarm_pos.y
+        // to draw the swarm's position in the UI
     };
 }
 
-function clientHandleMove(deg) {
+function clientHandleMove(pos) {
     // Send user email and choice
     socket.send(
         JSON.stringify({
             email: user.email,
-            degree: deg
+            position: pos
         })
     );
 }
