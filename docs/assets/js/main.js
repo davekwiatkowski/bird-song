@@ -96,7 +96,7 @@ class Tune {
         });
     }
 
-    handleDegree(degree) {
+    handleTune(degree, position) {
         const pointer = (degree - 36 + this.id * 360 / 5) % 360;
         const should_highlight = pointer < 72 && pointer >= 0;
         $(this.obj).css({
@@ -137,11 +137,15 @@ const go = function () {
 
     nipple.on('move', (event, data) => {
         const degree = data.angle.degree;
-        for (t of TUNES)
-            t.handleDegree(degree);
+        const position = data.position;
 
-        const pos = data.position;
-        clientHandleMove(pos);
+        for (tune of TUNES)
+            tune.handleTune(degree, position);
+
+        clientHandleMove(position);
+    }).on('end', (event, data) => {
+        for (tune of TUNES)
+            tune.audio.pause();
     });
 };
 
