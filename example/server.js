@@ -1,21 +1,21 @@
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 1337 });
+const server = new WebSocket.Server({ port: 1337 });
 
 // Broadcast to all.
-wss.broadcast = function broadcast(data) {
-    wss.clients.forEach(function each(client) {
+server.broadcast = data => {
+    server.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
             client.send('Test send!');
         }
     });
 };
 
-wss.on('connection', function connection(ws) {
-    ws.on('message', function incoming(data) {
+server.on('connection', socket => {
+    socket.on('message', data => {
         // Broadcast to everyone else.
-        wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
+        server.clients.forEach(client => {
+            if (client !== socket && client.readyState === WebSocket.OPEN) {
                 client.send(data);
             }
         });
