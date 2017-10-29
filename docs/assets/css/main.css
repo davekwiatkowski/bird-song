@@ -283,8 +283,10 @@ ul {
   /* line 16, docs/src/sass/parts/_app.sass */
   .app-screen #static {
     position: fixed;
-    top: 50%; }
-  /* line 21, docs/src/sass/parts/_app.sass */
+    top: 50%;
+    cursor: move;
+    z-index: 10; }
+  /* line 23, docs/src/sass/parts/_app.sass */
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
@@ -300,6 +302,21 @@ ul {
     height: 5.5ch;
     line-height: 1;
     font-size: 18px; }
-    /* line 35, docs/src/sass/parts/_app.sass */
+    /* line 37, docs/src/sass/parts/_app.sass */
     .app-screen .bird-tunes li:hover {
       background-color: #404040; }
+
+/* line 1, docs/src/sass/parts/_swarm.sass */
+.swarm {
+  background-color: #faa;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: -2;
+  position: fixed;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-box-shadow: 0px 13px 18px -7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 13px 18px -7px rgba(0, 0, 0, 0.3); }
