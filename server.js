@@ -11,7 +11,7 @@ let swarm_pos = {
 };
 
 function setSwarmPos(newx, newy) {
-    if (!isNaN(newx) && !isNaN(newy)) {
+    if (newx != null && newy != null && !isNaN(newx) && !isNaN(newy)) {
         swarm_pos.x = newx;
         swarm_pos.y = newy;
     }
