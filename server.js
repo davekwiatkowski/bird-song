@@ -1,8 +1,22 @@
-var express = require("express");
-var app = express();
-var port = process.env.PORT || 5000;
+const WebSocket = require('ws');
+const server = new WebSocket.Server({port: (process.env.PORT || 5000)});
 
-app.get("/", function(req,res){
-	res.send("Waddup my birdsongs");
+// Broadcast to all.
+server.broadcast = data => {
+    server.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send('Test send!');
+        }
+    });
+};
+
+server.on('connection', socket => {
+    socket.on('message', data => {
+        // Broadcast to everyone else.
+        server.clients.forEach(client => {
+            if (client !== socket && client.readyState === WebSocket.OPEN) {
+                client.send(data);
+            }
+        });
+    });
 });
-app.listen(port);
