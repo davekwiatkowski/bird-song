@@ -66,11 +66,15 @@ server.on('connection', socket => {
                 swarm_pos.y = 0;
             }
             else {
-                const old_pos = dict[key];
-                swarm_pos.x = ((swarm_pos.x * size) - old_pos.x) / size;
-                swarm_pos.y = ((swarm_pos.y * size) - old_pos.y) / size;
+                if (key in dict) {
+                    const old_pos = dict[key];
+                    swarm_pos.x = ((swarm_pos.x * size) - old_pos.x) / size;
+                    swarm_pos.y = ((swarm_pos.y * size) - old_pos.y) / size;
+                }
             }
-            delete dict[key];
+            if (key in dict) {
+                delete dict[key];
+            }
             broadcast();
         }
         catch (error) {
