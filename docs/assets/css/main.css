@@ -286,7 +286,7 @@ ul {
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
-    top: calc(50vh - 45px);
+    top: calc(50vh - 48px);
     -webkit-transform-origin: center center;
             transform-origin: center center;
     border-bottom: 2px solid #878787;
