@@ -41,7 +41,7 @@ function startApp() {
     go();
 }
 
-function onSignIn(googleUser) {
+function handleSignIn(googleUser) {
     const profile = googleUser.getBasicProfile();
     user = new User(profile);
     $(".signin-page").addClass("signed-in");
@@ -53,6 +53,11 @@ function onSignIn(googleUser) {
     });
 
     $(".profile .name").text(user.name);
+}
+
+async function onSignIn(googleUser) {
+    await handleSignIn(googleUser);
+    clientInit();
 }
 
 function signOut() {
