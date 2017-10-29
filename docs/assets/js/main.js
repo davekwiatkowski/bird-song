@@ -29,8 +29,12 @@ const song_prefix = '/assets/audio/';
 const songs = {
     'round1': {
         'names': ['Mystery Bird', 'Bewicks Swan', 'Brent Goose', 'Canada Goose', 'Wood Duck'],
-        'locations': ['Round1_Target.m4a', 'Round1_Choice_Bewicks_Swan.ogg', 'Round1_Choice_Brent_Goose.ogg', 'Round1_Choice_Canada_Goose.ogg', 'Round1_Choice_Wood_Duck.ogg'],
+        'locations': ['Round1_Target.m4a', 'Round1_Choice_Bewicks_Swan.ogg', 'Round1_Choice_Brent_Goose.ogg', 'Round1_Choice_Canada_Goose.ogg', 'Round1_Choice_Wood_Duck.ogg']
     },
+    'round2': {
+        'names': ['Mystery Bird', 'White Goose', 'Brant Goose', "Tundra Swan", "Eurasian wigeon"],
+        'locations': ['Round2_Target.ogg', 'Round2_Choice_White_Goose.ogg', 'Round2_Choice_Brant_Goose.ogg', 'Round2_Choice_Tundra_Swan.ogg', 'Round2_Choice_Eurasian_Wigeion.ogg']
+    }
 };
 
 const TUNES = [];
