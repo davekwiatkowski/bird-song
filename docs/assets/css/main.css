@@ -281,12 +281,12 @@ ul {
   /* line 15, docs/src/sass/parts/_app.sass */
   .app-screen #static {
     position: fixed;
-    top: calc(50vh - 50px); }
+    top: 50%; }
   /* line 20, docs/src/sass/parts/_app.sass */
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
-    top: calc(50% - 90px);
+    top: calc(50vh - 50px);
     -webkit-transform-origin: center center;
             transform-origin: center center;
     border-bottom: 2px solid #878787;
