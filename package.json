@@ -36,6 +36,7 @@
     "node": "8.6.0"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "ws": "^3.2.0"
   }
 }
