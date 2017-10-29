@@ -1,11 +1,27 @@
 <html>
     <head>
         <script type="text/javascript" src="client.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <form action="javascript:handle_message(input.value)">
-            Text input: <input type="text" id="input">
-            <input type="submit" value="Submit">
-        </form>
+        <!-- action="javascript:handle_message(input.value)" -->
+        <div id="form">
+            <div>
+                <input type="radio" id="option1" onclick="handle(this.value)" name="options" value="A">
+                <label for="option1">A</label>
+            </div>
+            <div>
+                <input type="radio" id="option2" onclick="handle(this.value)" name="options" value="B">
+                <label for="option2">B</label>
+            </div>
+            <div>
+                <input type="radio" id="option3" onclick="handle(this.value)" name="options" value="C">
+                <label for="option3">C</label>
+            </div>
+            <div>
+                <input type="radio" id="option4" onclick="handle(this.value)" name="options" value="D">
+                <label for="option4">D</label>
+            </div>
+        </div>
     </body>
 </html>
