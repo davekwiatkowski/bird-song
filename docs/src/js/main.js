@@ -125,7 +125,7 @@ class Tune {
         const pointer = (degree - 36 + this.id * 360 / 5) % 360;
         const should_highlight = pointer < 72 && pointer >= 0;
         $(this.obj).css({
-            "border-bottom-color": `rgba(255, 255, 255, ${should_highlight ? 1 : 0})`
+            "border-bottom-color": `rgba(255, 255, 255, ${should_highlight ? 1 : 0.03})`
         });
 
         if (should_highlight) {

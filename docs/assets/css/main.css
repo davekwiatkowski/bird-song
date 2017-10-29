@@ -311,7 +311,7 @@ ul {
     top: calc(50vh - 48px);
     -webkit-transform-origin: center center;
             transform-origin: center center;
-    border-bottom: 2px solid #878787;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.03);
     width: 150px;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
