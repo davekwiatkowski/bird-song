@@ -112,12 +112,17 @@ const go = function () {
         TUNES.push(new Tune(name, audio, obj, i));
     }
 
-    const static = nipplejs.create({
+    const nipple = nipplejs.create({
         zone: document.getElementById('static'),
         mode: 'static',
         position: { left: '50%', top: '50%' },
         color: 'rgba(255,255,255,0.2)',
         size: 150
+    });
+
+    nipple.on('move', (event, data) => {
+        const degree = data.angle.degree;
+        clientHandleMove(degree);
     });
 };
 

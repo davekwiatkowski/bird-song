@@ -16,12 +16,12 @@ function clientInit() {
     };
 }
 
-handle = data => {
+function clientHandleMove(deg) {
     // Send user email and choice
     socket.send(
         JSON.stringify({
             email: user.email,
-            choice: data
+            degree: deg
         })
     );
 }
