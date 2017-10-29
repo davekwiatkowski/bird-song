@@ -296,15 +296,23 @@ ul {
       -ms-flex-direction: column;
           flex-direction: column; }
   /* line 13, docs/src/sass/parts/_app.sass */
+  .app-screen #time {
+    position: fixed;
+    bottom: 0rem;
+    right: 0;
+    padding: 1rem;
+    color: #ccc;
+    font-size: 150%; }
+  /* line 21, docs/src/sass/parts/_app.sass */
   .app-screen:not(.started) {
     display: none; }
-  /* line 16, docs/src/sass/parts/_app.sass */
+  /* line 24, docs/src/sass/parts/_app.sass */
   .app-screen #static {
     position: fixed;
     top: 50%;
     cursor: move;
     z-index: 10; }
-  /* line 23, docs/src/sass/parts/_app.sass */
+  /* line 31, docs/src/sass/parts/_app.sass */
   .app-screen .bird-tunes li {
     cursor: pointer;
     position: fixed;
@@ -320,7 +328,7 @@ ul {
     height: 5.5ch;
     line-height: 1;
     font-size: 18px; }
-    /* line 37, docs/src/sass/parts/_app.sass */
+    /* line 45, docs/src/sass/parts/_app.sass */
     .app-screen .bird-tunes li:hover {
       background-color: #626262; }
 
