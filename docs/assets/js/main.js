@@ -95,6 +95,13 @@ class Tune {
             }deg)`
         });
     }
+
+    handleDegree(degree) {
+        const pointer = (degree - 36 + this.id * 360 / 5) % 360;
+        $(this.obj).css({
+            "border-bottom-color": `rgba(255, 255, 255, ${pointer < 72 && pointer >= 0 ? 1 : 0})`
+        });
+    }
 }
 
 const go = function () {
@@ -122,6 +129,7 @@ const go = function () {
 
     nipple.on('move', (event, data) => {
         const degree = data.angle.degree;
+        for (t of TUNES) t.handleDegree(degree);
         clientHandleMove(degree);
     });
 };
